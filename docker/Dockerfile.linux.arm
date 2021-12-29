@@ -1,0 +1,9 @@
+FROM plugins/base:multiarch
+
+LABEL maintainer="kit101 <qkssk1711@163.com>" \
+  org.label-schema.name="Drone Plugin Gitee Pulls" \
+  org.label-schema.vendor="kit101" \
+  org.label-schema.schema-version="1.0"
+
+ADD release/linux/arm/drone-plugin-gitee-pulls /bin/
+ENTRYPOINT [ "/bin/drone-plugin-gitee-pulls" ]

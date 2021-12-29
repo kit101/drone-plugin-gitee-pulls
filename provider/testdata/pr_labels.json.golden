@@ -1,0 +1,10 @@
+[
+  {
+    "Name": "drone-build/running",
+    "Color": "E6A23C"
+  },
+  {
+    "Name": "drone-build/pass",
+    "Color": "67C23A"
+  }
+]

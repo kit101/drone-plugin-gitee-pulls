@@ -1,0 +1,42 @@
+[
+  {
+    "Name": "bug",
+    "Color": "DB2828"
+  },
+  {
+    "Name": "drone-build/pass",
+    "Color": "67C23A"
+  },
+  {
+    "Name": "drone-build/running",
+    "Color": "E6A23C"
+  },
+  {
+    "Name": "drone-build/running1",
+    "Color": "000000"
+  },
+  {
+    "Name": "duplicate",
+    "Color": "767676"
+  },
+  {
+    "Name": "enhancement",
+    "Color": "F2711C"
+  },
+  {
+    "Name": "feature",
+    "Color": "B5CC18"
+  },
+  {
+    "Name": "invalid",
+    "Color": "1B1C1D"
+  },
+  {
+    "Name": "question",
+    "Color": "00B5AD"
+  },
+  {
+    "Name": "wontfix",
+    "Color": "6435C9"
+  }
+]

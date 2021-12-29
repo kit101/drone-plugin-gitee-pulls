@@ -1,0 +1,92 @@
+[
+  {
+    "id": 134185305,
+    "name": "bug",
+    "color": "DB2828",
+    "repository_id": 19390416,
+    "url": "https://gitee.com/api/v5/repos/kit101/demo1/labels/bug",
+    "created_at": "2021-11-23T13:40:46+08:00",
+    "updated_at": "2021-11-23T13:40:46+08:00"
+  },
+  {
+    "id": 135184973,
+    "name": "drone-build/pass",
+    "color": "67C23A",
+    "repository_id": 19390416,
+    "url": "https://gitee.com/api/v5/repos/kit101/demo1/labels/drone-build/pass",
+    "created_at": "2021-11-30T17:59:51+08:00",
+    "updated_at": "2021-11-30T18:08:31+08:00"
+  },
+  {
+    "id": 135184972,
+    "name": "drone-build/running",
+    "color": "E6A23C",
+    "repository_id": 19390416,
+    "url": "https://gitee.com/api/v5/repos/kit101/demo1/labels/drone-build/running",
+    "created_at": "2021-11-30T17:59:51+08:00",
+    "updated_at": "2021-11-30T18:07:37+08:00"
+  },
+  {
+    "id": 137791857,
+    "name": "drone-build/running1",
+    "color": "000000",
+    "repository_id": 19390416,
+    "url": "https://gitee.com/api/v5/repos/kit101/demo1/labels/drone-build/running1",
+    "created_at": "2021-12-20T13:44:43+08:00",
+    "updated_at": "2021-12-20T13:44:43+08:00"
+  },
+  {
+    "id": 134185308,
+    "name": "duplicate",
+    "color": "767676",
+    "repository_id": 19390416,
+    "url": "https://gitee.com/api/v5/repos/kit101/demo1/labels/duplicate",
+    "created_at": "2021-11-23T13:40:46+08:00",
+    "updated_at": "2021-11-23T13:40:46+08:00"
+  },
+  {
+    "id": 134185306,
+    "name": "enhancement",
+    "color": "F2711C",
+    "repository_id": 19390416,
+    "url": "https://gitee.com/api/v5/repos/kit101/demo1/labels/enhancement",
+    "created_at": "2021-11-23T13:40:46+08:00",
+    "updated_at": "2021-11-23T13:40:46+08:00"
+  },
+  {
+    "id": 134185307,
+    "name": "feature",
+    "color": "B5CC18",
+    "repository_id": 19390416,
+    "url": "https://gitee.com/api/v5/repos/kit101/demo1/labels/feature",
+    "created_at": "2021-11-23T13:40:46+08:00",
+    "updated_at": "2021-11-23T13:40:46+08:00"
+  },
+  {
+    "id": 134185309,
+    "name": "invalid",
+    "color": "1B1C1D",
+    "repository_id": 19390416,
+    "url": "https://gitee.com/api/v5/repos/kit101/demo1/labels/invalid",
+    "created_at": "2021-11-23T13:40:46+08:00",
+    "updated_at": "2021-11-23T13:40:46+08:00"
+  },
+  {
+    "id": 134185310,
+    "name": "question",
+    "color": "00B5AD",
+    "repository_id": 19390416,
+    "url": "https://gitee.com/api/v5/repos/kit101/demo1/labels/question",
+    "created_at": "2021-11-23T13:40:46+08:00",
+    "updated_at": "2021-11-23T13:40:46+08:00"
+  },
+  {
+    "id": 134185311,
+    "name": "wontfix",
+    "color": "6435C9",
+    "repository_id": 19390416,
+    "url": "https://gitee.com/api/v5/repos/kit101/demo1/labels/wontfix",
+    "created_at": "2021-11-23T13:40:46+08:00",
+    "updated_at": "2021-11-24T09:40:45+08:00"
+  }
+]

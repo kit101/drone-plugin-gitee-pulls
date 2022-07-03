@@ -11,7 +11,7 @@
 Drone plugin to create comment and label in PR to Gitee.
 
 For the usage information and a listing of the available options please take a look
-at [the docs](http://plugins.drone.io/kit101/drone-plugin-gitee-pulls/).
+at [the docs](https://plugins.drone.io/plugins/gitee-pulls).
 </div>
 
 ## Build

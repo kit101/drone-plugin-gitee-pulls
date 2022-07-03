@@ -10,7 +10,7 @@
 <div style="display: none;">
 Drone插件，用于在Gitee的PR中创建注释和标签。
 
-有关使用信息和可用选项列表，请查看[文档](http://plugins.drone.io/kit101/drone-plugin-gitee-pulls/).
+有关使用信息和可用选项列表，请查看[文档](https://plugins.drone.io/plugins/gitee-pulls).
 </div>
 
 ## Build

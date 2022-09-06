@@ -3,6 +3,7 @@ package plugins
 import (
 	"github.com/kit101/drone-plugin-gitee-pulls/config"
 	"github.com/kit101/drone-plugin-gitee-pulls/provider"
+	"github.com/sirupsen/logrus"
 )
 
 type TestPlugin interface {
@@ -29,6 +30,7 @@ func NewTestPlugin(config config.Config, client *provider.Client) TestPlugin {
 }
 
 func (t *testPlugin) PushTestResult() error {
+	logrus.Info("test:PushTestResult")
 	if t.buildStatus == config.BuildStatusSuccess {
 		return t.passTest()
 	} else {

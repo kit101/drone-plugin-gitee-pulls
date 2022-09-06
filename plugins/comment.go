@@ -58,6 +58,7 @@ func NewCommentPlugin(config config.Config, client *provider.Client) CommentPlug
 
 // CommentBuildLink 评论drone build链接
 func (p *commentPlugin) CommentBuildLink() error {
+	logrus.Info("comment:CommentBuildLink")
 	comments, _, _ := p.client.PullRequests.ListComments(p.ctx, p.repo, p.pullRequestNumber, scm.ListOptions{})
 	var existing *scm.Comment
 	for _, c := range comments {

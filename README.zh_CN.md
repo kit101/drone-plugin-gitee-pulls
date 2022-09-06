@@ -88,6 +88,7 @@ gitee access token, 可以生成一个personal access token.
 禁用自动更新测试状态, 默认: `false`
 
 ### example
+
 ```yaml
 ---
 name: default

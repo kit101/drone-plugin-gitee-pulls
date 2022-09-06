@@ -64,7 +64,7 @@ enable debug mode, default: `false`.
 **api_server**:
 the gitee api server url, default: `https://gitee.com/api/v5`.
 
-**access_token**: 
+**access_token**:
 gitee access token, you can generate personal access token.
 
 **is_running**:
@@ -89,6 +89,7 @@ set the name and color of the failure label, default: `drone-build/failure,DB282
 disable automatic updating of the test status, default: `false`
 
 ### Example
+
 ```yaml
 ---
 name: default

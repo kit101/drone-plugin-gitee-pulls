@@ -26,7 +26,7 @@ type pullRequestTestService struct {
 func (p pullRequestTestService) Pass(repo string, number int, force bool) (*scm.Response, error) {
 	path := fmt.Sprintf("repos/%s/pulls/%d/test", repo, number)
 	params := map[string]bool{
-		"name": force,
+		"force": force,
 	}
 	res, err := p.client.do("POST", path, params, nil)
 	return res, err

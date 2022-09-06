@@ -88,14 +88,14 @@ func main() {
 
 		// comment
 		cli.BoolFlag{
-			Name:   "comment",
+			Name:   "comment-disabled",
 			Usage:  "comment disabled",
 			EnvVar: "PLUGIN_COMMENT_DISABLED",
 		},
 
 		// label
 		cli.BoolFlag{
-			Name:   "label",
+			Name:   "label-disabled",
 			Usage:  "label disabled",
 			EnvVar: "PLUGIN_LABEL_DISABLED",
 		},
@@ -120,7 +120,7 @@ func main() {
 
 		// test
 		cli.BoolFlag{
-			Name:   "test",
+			Name:   "test-disabled",
 			Usage:  "test disabled",
 			EnvVar: "PLUGIN_TEST_DISABLED",
 		},
@@ -200,6 +200,8 @@ func run(c *cli.Context) error {
 		"test_disabled":       conf.PluginTest.Disabled,
 	}).Debug("args")
 
+	logrus.WithField("config", conf).Debug("conf")
+
 	if strings.TrimSpace(token) == "" {
 		return errors.New("token must not be blank")
 	}
@@ -208,16 +210,22 @@ func run(c *cli.Context) error {
 }
 
 func initLogger(debug bool) {
-	customFormatter := new(logrus.TextFormatter)
+	customFormatter := new(logrus.JSONFormatter)
 	customFormatter.TimestampFormat = "2006-01-02 15:04:05"
-	customFormatter.FullTimestamp = true
+	//customFormatter.FullTimestamp = true
+	//customFormatter.PrettyPrint = false
 	logrus.SetFormatter(customFormatter)
 	//logrus.SetReportCaller(true)
 	if debug {
 		logrus.SetLevel(logrus.DebugLevel)
+		envMap := make(map[string]string)
 		for _, env := range os.Environ() {
-			logrus.Debug(env)
+			i := strings.Index(env, "=")
+			envName := env[:i]
+			envValue := env[i+1:]
+			envMap[envName] = envValue
 		}
+		logrus.WithField("envs", envMap).Debug()
 	}
 }
 

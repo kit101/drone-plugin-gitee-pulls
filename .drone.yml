@@ -33,7 +33,7 @@ steps:
 
 volumes:
 - name: gopath
-  temp: {}
+  temp: { }
 
 trigger:
   ref:

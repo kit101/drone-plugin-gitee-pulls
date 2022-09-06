@@ -33,6 +33,7 @@ func NewLabelPlugin(config config.Config, client *provider.Client, labels []stri
 }
 
 func (l *labelPlugin) UpdatePullRequestStatusLabel(name, color string) error {
+	logrus.Info("label:UpdatePullRequestStatusLabel")
 	var names []string
 	for _, labelName := range l.labels {
 		if labelName != name {

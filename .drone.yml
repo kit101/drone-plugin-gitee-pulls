@@ -211,90 +211,90 @@ trigger:
 depends_on:
 - testing
 
----
-type: docker
-kind: pipeline
-name: linux-arm
-
-platform:
-  os: linux
-  arch: arm
-
-steps:
-- name: build-push
-  pull: always
-  image: golang:1.15
-  commands:
-  - "go build -v -ldflags \"-X main.version=${DRONE_COMMIT_SHA:0:8}\" -a -tags netgo -o release/linux/arm/drone-plugin-gitee-pulls"
-  environment:
-    CGO_ENABLED: 0
-    GO111MODULE: on
-  when:
-    event:
-      exclude:
-      - tag
-
-- name: build-tag
-  pull: always
-  image: golang:1.15
-  commands:
-  - "go build -v -ldflags \"-X main.version=${DRONE_TAG##v}\" -a -tags netgo -o release/linux/arm/drone-plugin-gitee-pulls"
-  environment:
-    CGO_ENABLED: 0
-    GO111MODULE: on
-  when:
-    event:
-    - tag
-
-- name: executable
-  pull: always
-  image: golang:1.15
-  commands:
-  - ./release/linux/arm/drone-plugin-gitee-pulls --help
-
-- name: dryrun
-  pull: always
-  image: plugins/docker:linux-arm
-  settings:
-    daemon_off: false
-    dry_run: true
-    dockerfile: docker/Dockerfile.linux.arm
-    repo: kit101z/drone-plugin-gitee-pulls
-    tags: linux-arm
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
-  when:
-    event:
-    - pull_request
-
-- name: publish
-  pull: always
-  image: plugins/docker:linux-arm
-  settings:
-    daemon_off: false
-    dockerfile: docker/Dockerfile.linux.arm
-    repo: kit101z/drone-plugin-gitee-pulls
-    auto_tag: true
-    auto_tag_suffix: linux-arm
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
-  when:
-    event:
-      exclude:
-      - pull_request
-
-trigger:
-  ref:
-  - "refs/heads/master"
-  - "refs/tags/**"
-  - "refs/pull/**"
-
-depends_on:
-- testing
+#---
+#type: docker
+#kind: pipeline
+#name: linux-arm
+#
+#platform:
+#  os: linux
+#  arch: arm
+#
+#steps:
+#- name: build-push
+#  pull: always
+#  image: golang:1.15
+#  commands:
+#  - "go build -v -ldflags \"-X main.version=${DRONE_COMMIT_SHA:0:8}\" -a -tags netgo -o release/linux/arm/drone-plugin-gitee-pulls"
+#  environment:
+#    CGO_ENABLED: 0
+#    GO111MODULE: on
+#  when:
+#    event:
+#      exclude:
+#      - tag
+#
+#- name: build-tag
+#  pull: always
+#  image: golang:1.15
+#  commands:
+#  - "go build -v -ldflags \"-X main.version=${DRONE_TAG##v}\" -a -tags netgo -o release/linux/arm/drone-plugin-gitee-pulls"
+#  environment:
+#    CGO_ENABLED: 0
+#    GO111MODULE: on
+#  when:
+#    event:
+#    - tag
+#
+#- name: executable
+#  pull: always
+#  image: golang:1.15
+#  commands:
+#  - ./release/linux/arm/drone-plugin-gitee-pulls --help
+#
+#- name: dryrun
+#  pull: always
+#  image: plugins/docker:linux-arm
+#  settings:
+#    daemon_off: false
+#    dry_run: true
+#    dockerfile: docker/Dockerfile.linux.arm
+#    repo: kit101z/drone-plugin-gitee-pulls
+#    tags: linux-arm
+#    username:
+#      from_secret: docker_username
+#    password:
+#      from_secret: docker_password
+#  when:
+#    event:
+#    - pull_request
+#
+#- name: publish
+#  pull: always
+#  image: plugins/docker:linux-arm
+#  settings:
+#    daemon_off: false
+#    dockerfile: docker/Dockerfile.linux.arm
+#    repo: kit101z/drone-plugin-gitee-pulls
+#    auto_tag: true
+#    auto_tag_suffix: linux-arm
+#    username:
+#      from_secret: docker_username
+#    password:
+#      from_secret: docker_password
+#  when:
+#    event:
+#      exclude:
+#      - pull_request
+#
+#trigger:
+#  ref:
+#  - "refs/heads/master"
+#  - "refs/tags/**"
+#  - "refs/pull/**"
+#
+#depends_on:
+#- testing
 
 ---
 type: docker
@@ -326,6 +326,6 @@ trigger:
 depends_on:
 - linux-amd64
 - linux-arm64
-- linux-arm
+#- linux-arm
 
 ...

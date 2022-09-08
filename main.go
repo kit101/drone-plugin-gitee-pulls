@@ -10,10 +10,12 @@ import (
 
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
+	"github.com/joho/godotenv"
 )
 
 var (
-	version = "unknown"
+	version = "1.1.0"
+	env_file = "/run/drone/env"
 )
 
 func main() {
@@ -124,6 +126,11 @@ func main() {
 			Usage:  "test disabled",
 			EnvVar: "PLUGIN_TEST_DISABLED",
 		},
+	}
+
+	// compatible with kubernetes runner
+	if _, err := os.Stat(env_file); err == nil {
+		godotenv.Overload(env_file)
 	}
 
 	if err := app.Run(os.Args); err != nil {
